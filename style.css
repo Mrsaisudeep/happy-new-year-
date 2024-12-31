@@ -1,0 +1,145 @@
+/* Global reset and body styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #282c34;
+    font-family: 'Arial', sans-serif;
+    color: white;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(45deg, #ff6f61, #ffcccb, #ffd700);
+    background-size: 400% 400%;
+    animation: gradientMove 10s ease infinite;
+}
+
+/* Container with text */
+.container {
+    animation: fadeIn 3s ease-in-out;
+}
+
+h1 {
+    font-size: 4rem;
+    color: #ff6347; /* Tomato color */
+    margin-bottom: 20px;
+    animation: bounce 2s infinite, textGlow 1.5s ease-in-out infinite alternate;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #98fb98; /* PaleGreen color */
+    animation: textGlow 1.5s ease-in-out infinite alternate;
+}
+
+/* Button Styles */
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.5);
+}
+
+button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.7);
+}
+
+/* Keyframe animations */
+
+/* Fade-in effect */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Bounce animation for h1 */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Glowing text effect */
+@keyframes textGlow {
+    0% {
+        text-shadow: 0 0 10px #ff6347, 0 0 20px #ff6347, 0 0 30px #ff6347;
+    }
+    100% {
+        text-shadow: 0 0 20px #ff6347, 0 0 30px #ff6347, 0 0 40px #ff6347;
+    }
+}
+
+/* Gradient background movement */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Floating particle animation */
+@keyframes floatingParticles {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Styling for floating particles */
+.particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ffcccb;
+    border-radius: 50%;
+    animation: floatingParticles 4s infinite ease-in-out;
+    z-index: -1;
+}
+
+.particle:nth-child(odd) {
+    animation-duration: 3s;
+}
+
+.particle:nth-child(even) {
+    animation-duration: 5s;
+}
+
+/* Creating floating particles effect */
+.particle:nth-child(1) { top: 10%; left: 50%; animation-delay: 0s; }
+.particle:nth-child(2) { top: 40%; left: 80%; animation-delay: 1s; }
+.particle:nth-child(3) { top: 70%; left: 30%; animation-delay: 2s; }
+.particle:nth-child(4) { top: 20%; left: 10%; animation-delay: 3s; }
+.particle:nth-child(5) { top: 90%; left: 60%; animation-delay: 4s; }
+.particle:nth-child(6) { top: 50%; left: 90%; animation-delay: 5s; }
